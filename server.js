@@ -19,6 +19,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(express.static("public"));
 
+//i cant get the mongodb addon to start, it keeps on asking for credit card info every time i try
 // mongoose.connect(" ");
 // var db = mongoose.connection;
 
