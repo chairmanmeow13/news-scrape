@@ -34,8 +34,7 @@ db.once("open", function() {
 // Routes
 
 app.get("/scrape", function(req, res) {
-  // First, we grab the body of the html with request
-  request(" ", function(error, response, html) {
+  request("http://bobs-burgers.wikia.com/wiki/Bob%27s_Burgers_Wiki", function(error, response, html) {
     var $ = cheerio.load(html);
     $("article h1").each(function(i, element) {
 
@@ -112,5 +111,5 @@ app.post("/articles/:id", function(req, res) {
 
 
 app.listen(process.env.PORT || 3000, function() {
-  console.log("App running on port 3000!");
+  console.log("App running on port 3000");
 });
